@@ -1,0 +1,127 @@
+<head>
+    <meta charset="utf-8">
+    <title>Heka Dashboard</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="javascript/vendor/html5shiv.js"></script>
+        <script src="javascript/vendor/respond.js"></script>
+      <![endif]-->
+    <script src="javascript/main.js" data-requiremodule="main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/router.js" data-requiremodule="router" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/jquery.js" data-requiremodule="jquery" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/adapters/plugins_adapter.js" data-requiremodule="adapters/plugins_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/adapters/sandboxes_adapter.js" data-requiremodule="adapters/sandboxes_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/health_index.js" data-requiremodule="views/health/health_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/sandboxes/sandboxes_index.js" data-requiremodule="views/sandboxes/sandboxes_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/sandboxes/sandbox_output_cbuf_show.js" data-requiremodule="views/sandboxes/sandbox_output_cbuf_show" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/sandboxes/sandbox_output_txt_show.js" data-requiremodule="views/sandboxes/sandbox_output_txt_show" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/plugins_show.js" data-requiremodule="views/health/plugins_show" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/termination_report/termination_report_index.js" data-requiremodule="views/termination_report/termination_report_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/underscore.js" data-requiremodule="underscore" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/base_view.js" data-requiremodule="views/base_view" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/hgn.js" data-requiremodule="hgn" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/presenters/plugin_presenter.js" data-requiremodule="presenters/plugin_presenter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/bootstrap.min.js" data-requiremodule="bootstrap" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/backbone.js" data-requiremodule="backbone" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/adapters/termination_report_adapter.js" data-requiremodule="adapters/termination_report_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/presenters/termination_report_row_presenter.js" data-requiremodule="presenters/termination_report_row_presenter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/adapters/sandbox_output_txt_adapter.js" data-requiremodule="adapters/sandbox_output_txt_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/presenters/sandbox_output_presenter.js" data-requiremodule="presenters/sandbox_output_presenter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/presenters/sandbox_output_cbuf_presenter.js" data-requiremodule="presenters/sandbox_output_cbuf_presenter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/adapters/sandbox_output_cbuf_adapter.js" data-requiremodule="adapters/sandbox_output_cbuf_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/globals_index.js" data-requiremodule="views/health/globals_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/inputs_index.js" data-requiremodule="views/health/inputs_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/decoders_index.js" data-requiremodule="views/health/decoders_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/filters_index.js" data-requiremodule="views/health/filters_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/outputs_index.js" data-requiremodule="views/health/outputs_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/encoders_index.js" data-requiremodule="views/health/encoders_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/adapters/base_adapter.js" data-requiremodule="adapters/base_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/models/sandbox.js" data-requiremodule="models/sandbox" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/models/sandbox_output.js" data-requiremodule="models/sandbox_output" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/models/plugin.js" data-requiremodule="models/plugin" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/collections/plugins.js" data-requiremodule="collections/plugins" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/dygraph-combined.js" data-requiremodule="dygraph" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/moment.min.js" data-requiremodule="moment" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/inputs_row.js" data-requiremodule="views/health/inputs_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/decoders_row.js" data-requiremodule="views/health/decoders_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/filters_row.js" data-requiremodule="views/health/filters_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/hogan.js" data-requiremodule="hogan" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/text.js" data-requiremodule="text" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/numeral.js" data-requiremodule="numeral" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/lib/termination_report.js" data-requiremodule="lib/termination_report" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/outputs_row.js" data-requiremodule="views/health/outputs_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/lib/circular_buffer.js" data-requiremodule="lib/circular_buffer" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/router_widget.js" data-requiremodule="views/health/router_widget" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/channel_count_widget.js" data-requiremodule="views/health/channel_count_widget" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/views/health/encoders_row.js" data-requiremodule="views/health/encoders_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/deep-model.js" data-requiremodule="deepModel" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="javascript/vendor/crc32.js" data-requiremodule="crc32" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script></head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Heka</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#health">Health</a></li>
+            <li><a href="#sandboxes">Sandboxes</a></li>
+            <li><a href="#termination_report">Termination Report</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="content"><div><h1 class="page-title">Health</h1>
+
+<div class="well">
+  <div id="globals-index" class="row"><div class="col-sm-3 stat-widget" id="router-widget"><h3>Router</h3>
+<h4><strong>641,495,727</strong></h4>
+<h5>Messages Processed</h5>
+</div>
+<div class="col-sm-3 stat-widget" id="router-channel-count"><h3>Router</h3>
+<h4><strong class="in-chan-length">0</strong>/<span class="in-chan-capacity">50</span></h4>
+<h5>Messages in Channel</h5>
+</div>
+<div class="col-sm-3 stat-widget" id="input-recycle-chan-widget"><h3>inputRecycleChan</h3>
+<h4><strong class="in-chan-length">100</strong>/<span class="in-chan-capacity">100</span></h4>
+<h5>Messages Available</h5>
+</div>
+<div class="col-sm-3 stat-widget" id="inject-recycle-chan-widget"><h3>injectRecycleChan</h3>
+<h4><strong class="in-chan-length">100</strong>/<span class="in-chan-capacity">100</span></h4>
+<h5>Messages Available</h5>
+</div>
+</div>
+</div>
+
+<h3>Plugins</h3>
+<div id="inputs-index"><table class="table plugins inputs">
+  <thead>
+    <tr>
+      <th class="name">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="name"><span class="glyphicon glyphicon-log-in"></span>
+      <h4>Inputs and Decoders</h4>
+        <table width="100%" class="verticaltable">
+          <col class="columnar"/>
+          <col class="columnar"/>
+          <col class="columnar"/>
+          <col class="columnar"/>
+          <tr>
+            <td>FHRInput</td>
+            <td>BackfillStream2</td>
+            <td>BackfillStream3</td>
+            <td>BackfillStream0</td>
+            <td>BackfillStream1</td>
+          </tr>
+            <td><a href="#plugins/decoders/FHRInput-63.245.214.162-FHRDecoders">63.245.214.162-FHRDecoders: 160,146,684</a> @ 119,889 ns<br/>125.64.35.67-FHRDecoders</td>
+            <td>BackfillDecoder</td>
+            <td>BackfillDecoder</td>
+            <td>BackfillDecoder</td>
+            <td>BackfillDecoder</td>
+         </table>
+    </td>
+  </tr>
+  <tr>
+      <td class="name"><span class="glyphicon glyphicon-log-in"></span>
+        <h4>Filters</h4>
+        <table width="100%">
+          <col class="columnar"/>
+          <tr>
+            <td><a href="#plugins/filters/FHRRequests">FHRRequests: 645,150,974</a> @ 390 ns</td>
+            <td><a href="#plugins/filters/Firefox Searches">Firefox Searches: 645,150,974</a> @ 745 ns</td>
+          </tr>
+         </table>
+      </td>
+  </tr>
+  <tr>
+    <td class="name"><span class="glyphicon glyphicon-log-in"></span>
+      <h4>Outputs and Encoders</h4>
+        <table width="100%">
+          <col class="columnar"/>
+          <col class="columnar"/>
+          <tr>
+            <td>Alert Output @ 296 ns</td>
+            <td>Dashboard @ 384 ns</td>
+            <td>TcpOutputLocal @ 380 ns</td>
+          </tr>
+          <tr>
+            <td>AlertEncoder</td>
+            <td></td>
+            <td><a href="#plugins/encoders/TcpOutputLocal-ProtobufEncoder">ProtobufEncoder: 641,353,033</a> @ 4,953 ns</td>
+          </tr>
+         </table>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+    </div>
+
+    <script data-main="javascript/main" src="javascript/vendor/require.js"></script>
+
+
+</body>
