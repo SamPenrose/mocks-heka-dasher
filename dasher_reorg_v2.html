@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Heka Dashboard</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="javascript/vendor/html5shiv.js"></script>
+        <script src="javascript/vendor/respond.js"></script>
+      <![endif]-->
+    <script src="Heka_Dashboard_files/main.js" data-requiremodule="main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/router.js" data-requiremodule="router" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/jquery.js" data-requiremodule="jquery" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/underscore.js" data-requiremodule="underscore" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/plugins_adapter.js" data-requiremodule="adapters/plugins_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandboxes_adapter.js" data-requiremodule="adapters/sandboxes_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/health_index.js" data-requiremodule="views/health/health_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandboxes_index.js" data-requiremodule="views/sandboxes/sandboxes_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandbox_output_cbuf_show.js" data-requiremodule="views/sandboxes/sandbox_output_cbuf_show" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandbox_output_txt_show.js" data-requiremodule="views/sandboxes/sandbox_output_txt_show" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/plugins_show.js" data-requiremodule="views/health/plugins_show" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/termination_report_index.js" data-requiremodule="views/termination_report/termination_report_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/base_adapter.js" data-requiremodule="adapters/base_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/plugin.js" data-requiremodule="models/plugin" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/plugins.js" data-requiremodule="collections/plugins" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/base_view.js" data-requiremodule="views/base_view" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/hgn.js" data-requiremodule="hgn" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/plugin_presenter.js" data-requiremodule="presenters/plugin_presenter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandbox.js" data-requiremodule="models/sandbox" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandbox_output.js" data-requiremodule="models/sandbox_output" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/globals_index.js" data-requiremodule="views/health/globals_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/inputs_index.js" data-requiremodule="views/health/inputs_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/decoders_index.js" data-requiremodule="views/health/decoders_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/filters_index.js" data-requiremodule="views/health/filters_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/outputs_index.js" data-requiremodule="views/health/outputs_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/encoders_index.js" data-requiremodule="views/health/encoders_index" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandbox_output_cbuf_presenter.js" data-requiremodule="presenters/sandbox_output_cbuf_presenter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandbox_output_cbuf_adapter.js" data-requiremodule="adapters/sandbox_output_cbuf_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandbox_output_txt_adapter.js" data-requiremodule="adapters/sandbox_output_txt_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/sandbox_output_presenter.js" data-requiremodule="presenters/sandbox_output_presenter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/dygraph-combined.js" data-requiremodule="dygraph" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/backbone.js" data-requiremodule="backbone" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/bootstrap.js" data-requiremodule="bootstrap" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/termination_report_adapter.js" data-requiremodule="adapters/termination_report_adapter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/termination_report_row_presenter.js" data-requiremodule="presenters/termination_report_row_presenter" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/crc32.js" data-requiremodule="crc32" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/deep-model.js" data-requiremodule="deepModel" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/hogan.js" data-requiremodule="hogan" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/text.js" data-requiremodule="text" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/numeral.js" data-requiremodule="numeral" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/router_widget.js" data-requiremodule="views/health/router_widget" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/channel_count_widget.js" data-requiremodule="views/health/channel_count_widget" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/inputs_row.js" data-requiremodule="views/health/inputs_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/decoders_row.js" data-requiremodule="views/health/decoders_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/filters_row.js" data-requiremodule="views/health/filters_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/outputs_row.js" data-requiremodule="views/health/outputs_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/encoders_row.js" data-requiremodule="views/health/encoders_row" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/circular_buffer.js" data-requiremodule="lib/circular_buffer" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/termination_report.js" data-requiremodule="lib/termination_report" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Heka_Dashboard_files/moment.js" data-requiremodule="moment" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script></head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Heka</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#health">Health</a></li>
+            <li><a href="#sandboxes">Sandboxes</a></li>
+            <li><a href="#termination_report">Termination Report</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="content">
+
+<div><h1 class="page-title">Health</h1>
+
+<div class="well">
+  <div id="globals-index" class="row "><div class="col-sm-3 stat-widget" id="router-widget"><h3>Router</h3>
+<h4><strong>439,520,958</strong></h4>
+<h5>Messages Processed</h5>
+</div>
+<div class="col-sm-3 stat-widget" id="router-channel-count"><h3>Router</h3>
+<h4><strong class="in-chan-length">49</strong>/<span class="in-chan-capacity">50</span></h4>
+<h5>Messages in Channel</h5>
+</div>
+<div class="col-sm-3 stat-widget" id="input-recycle-chan-widget"><h3>inputRecycleChan</h3>
+<h4><strong class="in-chan-length">0</strong>/<span class="in-chan-capacity">100</span></h4>
+<h5>Messages Available</h5>
+</div>
+<div class="col-sm-3 stat-widget" id="inject-recycle-chan-widget"><h3>injectRecycleChan</h3>
+<h4><strong class="in-chan-length">100</strong>/<span class="in-chan-capacity">100</span></h4>
+<h5>Messages Available</h5>
+</div>
+</div>
+</div>
+
+<h3>Inputs</h3>
+<div id="inputs-index"><table class="table plugins inputs">
+  <thead>
+    <tr>
+      <th class="name">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr><td class="name"><span class="glyphicon glyphicon-log-in"></span> <a href="#plugins/inputs/TcpInput">TcpInput</a></td>
+</tr></tbody>
+</table>
+</div>
+
+<h3>Decoders</h3>
+<div id="decoders-index"><table class="table plugins decoders">
+  <thead>
+    <tr>
+      <th class="name">Name</th>
+      <th class="in-channel hidden-xs">In Channel</th>
+      <th class="process-failures">Process Failures</th>
+      <th class="avg-process-duration">Process Duration</th>
+      <th class="processed">Processed</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.46.6-ProtobufDecoder">TcpInput-172.31.46.6-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">11,221 ns</td>
+<td class="processed hidden-xs">10,300,591</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.30.236-ProtobufDecoder">TcpInput-172.31.30.236-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,771 ns</td>
+<td class="processed hidden-xs">11,050,019</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.37.12-ProtobufDecoder">TcpInput-172.31.37.12-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,838 ns</td>
+<td class="processed hidden-xs">10,321,644</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.30.3-ProtobufDecoder">TcpInput-172.31.30.3-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,066 ns</td>
+<td class="processed hidden-xs">9,573,799</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.34.250-ProtobufDecoder">TcpInput-172.31.34.250-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">7,131 ns</td>
+<td class="processed hidden-xs">32,228,324</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.11.146-ProtobufDecoder">TcpInput-172.31.11.146-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,495 ns</td>
+<td class="processed hidden-xs">11,544,459</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.32.153-ProtobufDecoder">TcpInput-172.31.32.153-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,925 ns</td>
+<td class="processed hidden-xs">10,238,300</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.9.143-ProtobufDecoder">TcpInput-172.31.9.143-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,361 ns</td>
+<td class="processed hidden-xs">12,083,655</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.47.141-ProtobufDecoder">TcpInput-172.31.47.141-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">11,476 ns</td>
+<td class="processed hidden-xs">11,290,930</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.6.132-ProtobufDecoder">TcpInput-172.31.6.132-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,144 ns</td>
+<td class="processed hidden-xs">11,389,539</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.46.157-ProtobufDecoder">TcpInput-172.31.46.157-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,554 ns</td>
+<td class="processed hidden-xs">11,381,095</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.1.53-ProtobufDecoder">TcpInput-172.31.1.53-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,629 ns</td>
+<td class="processed hidden-xs">9,750,925</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.39.177-ProtobufDecoder">TcpInput-172.31.39.177-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,617 ns</td>
+<td class="processed hidden-xs">38,210</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.0.245-ProtobufDecoder">TcpInput-172.31.0.245-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,079 ns</td>
+<td class="processed hidden-xs">437,738</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.10.149-ProtobufDecoder">TcpInput-172.31.10.149-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,634 ns</td>
+<td class="processed hidden-xs">11,773,182</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.19.183-ProtobufDecoder">TcpInput-172.31.19.183-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,548 ns</td>
+<td class="processed hidden-xs">9,658,063</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.19.187-ProtobufDecoder">TcpInput-172.31.19.187-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,500 ns</td>
+<td class="processed hidden-xs">11,265,760</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.2.16-ProtobufDecoder">TcpInput-172.31.2.16-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,146 ns</td>
+<td class="processed hidden-xs">11,229,750</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.14.179-ProtobufDecoder">TcpInput-172.31.14.179-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">11,487 ns</td>
+<td class="processed hidden-xs">11,202,456</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.23.71-ProtobufDecoder">TcpInput-172.31.23.71-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">8,797 ns</td>
+<td class="processed hidden-xs">9,946,814</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.29.127-ProtobufDecoder">TcpInput-172.31.29.127-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">6,566 ns</td>
+<td class="processed hidden-xs">33,347,653</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.41.68-ProtobufDecoder">TcpInput-172.31.41.68-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,916 ns</td>
+<td class="processed hidden-xs">89,687</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.7.29-ProtobufDecoder">TcpInput-172.31.7.29-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">363,095 ns</td>
+<td class="processed hidden-xs">9,181</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.35.94-ProtobufDecoder">TcpInput-172.31.35.94-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,998 ns</td>
+<td class="processed hidden-xs">10,993,205</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.29.198-ProtobufDecoder">TcpInput-172.31.29.198-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">6,812 ns</td>
+<td class="processed hidden-xs">33,255,411</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.21.139-ProtobufDecoder">TcpInput-172.31.21.139-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">12,363 ns</td>
+<td class="processed hidden-xs">9,412,637</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.42.136-ProtobufDecoder">TcpInput-172.31.42.136-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">7,202 ns</td>
+<td class="processed hidden-xs">31,478,694</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.9.146-ProtobufDecoder">TcpInput-172.31.9.146-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,124 ns</td>
+<td class="processed hidden-xs">39,702</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.30.61-ProtobufDecoder">TcpInput-172.31.30.61-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,118 ns</td>
+<td class="processed hidden-xs">438,669</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.27.127-ProtobufDecoder">TcpInput-172.31.27.127-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,052 ns</td>
+<td class="processed hidden-xs">38,333</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.38.175-ProtobufDecoder">TcpInput-172.31.38.175-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,029 ns</td>
+<td class="processed hidden-xs">10,257,740</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.47.250-ProtobufDecoder">TcpInput-172.31.47.250-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,408 ns</td>
+<td class="processed hidden-xs">34,216</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.5.222-ProtobufDecoder">TcpInput-172.31.5.222-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">7,018 ns</td>
+<td class="processed hidden-xs">31,758,694</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.20.243-ProtobufDecoder">TcpInput-172.31.20.243-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,626 ns</td>
+<td class="processed hidden-xs">7,637,646</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.45.244-ProtobufDecoder">TcpInput-172.31.45.244-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">11,242 ns</td>
+<td class="processed hidden-xs">11,243,236</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.21.99-ProtobufDecoder">TcpInput-172.31.21.99-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,544 ns</td>
+<td class="processed hidden-xs">9,731,001</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.28.74-ProtobufDecoder">TcpInput-172.31.28.74-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,349 ns</td>
+<td class="processed hidden-xs">7,700,975</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.2.132-ProtobufDecoder">TcpInput-172.31.2.132-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">8,606 ns</td>
+<td class="processed hidden-xs">4,633</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.15.78-ProtobufDecoder">TcpInput-172.31.15.78-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,350 ns</td>
+<td class="processed hidden-xs">34,028</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.19.188-ProtobufDecoder">TcpInput-172.31.19.188-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,231 ns</td>
+<td class="processed hidden-xs">4,692</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.30.138-ProtobufDecoder">TcpInput-172.31.30.138-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,100 ns</td>
+<td class="processed hidden-xs">33,681</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.17.94-ProtobufDecoder">TcpInput-172.31.17.94-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">6,800 ns</td>
+<td class="processed hidden-xs">4,480</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.6.168-ProtobufDecoder">TcpInput-172.31.6.168-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">6,968 ns</td>
+<td class="processed hidden-xs">6,552</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.36.104-ProtobufDecoder">TcpInput-172.31.36.104-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">11,183 ns</td>
+<td class="processed hidden-xs">1,339</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.31.215-ProtobufDecoder">TcpInput-172.31.31.215-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">6,741 ns</td>
+<td class="processed hidden-xs">6,532</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.15.238-ProtobufDecoder">TcpInput-172.31.15.238-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">20,804 ns</td>
+<td class="processed hidden-xs">1,324</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.19.25-ProtobufDecoder">TcpInput-172.31.19.25-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">7,535 ns</td>
+<td class="processed hidden-xs">1,341</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.38.103-ProtobufDecoder">TcpInput-172.31.38.103-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,415 ns</td>
+<td class="processed hidden-xs">5,380</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.19.67-ProtobufDecoder">TcpInput-172.31.19.67-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">8,363 ns</td>
+<td class="processed hidden-xs">1,306</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.27.124-ProtobufDecoder">TcpInput-172.31.27.124-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">8,835 ns</td>
+<td class="processed hidden-xs">5,277</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.41.141-ProtobufDecoder">TcpInput-172.31.41.141-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">7,943 ns</td>
+<td class="processed hidden-xs">11,288</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.36.160-ProtobufDecoder">TcpInput-172.31.36.160-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">9,380 ns</td>
+<td class="processed hidden-xs">6,038</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.7.179-ProtobufDecoder">TcpInput-172.31.7.179-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,918 ns</td>
+<td class="processed hidden-xs">4,958</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.0.120-ProtobufDecoder">TcpInput-172.31.0.120-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">3,191 ns</td>
+<td class="processed hidden-xs">4</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.20.171-ProtobufDecoder">TcpInput-172.31.20.171-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">3,710 ns</td>
+<td class="processed hidden-xs">2</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.12.182-ProtobufDecoder">TcpInput-172.31.12.182-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="5/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="50" style="width: 10%;">
+      <span class="sr-only">10% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">8,899 ns</td>
+<td class="processed hidden-xs">15,138,901</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.42.133-ProtobufDecoder">TcpInput-172.31.42.133-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,919 ns</td>
+<td class="processed hidden-xs">2</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.38.156-ProtobufDecoder">TcpInput-172.31.38.156-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">3,264 ns</td>
+<td class="processed hidden-xs">1</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.30.131-ProtobufDecoder">TcpInput-172.31.30.131-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">10,336 ns</td>
+<td class="processed hidden-xs">3,720,246</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-import"></span> <a href="#plugins/decoders/TcpInput-172.31.31.97-ProtobufDecoder">TcpInput-172.31.31.97-ProtobufDecoder</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">4,977 ns</td>
+<td class="processed hidden-xs">150,000</td>
+</tr></tbody>
+</table>
+</div>
+
+<h3>Filters</h3>
+<div id="filters-index"><table class="table plugins filters">
+  <thead>
+    <tr>
+      <th class="name">Name</th>
+      <th class="in-channel hidden-xs">In Channel</th>
+      <th class="match-channel hidden-xs">Match Channel</th>
+      <th class="avg-match-duration hidden-xs">Match Duration</th>
+      <th class="processed hidden-xs">Processed</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopHTTPStatus">LoopHTTPStatus</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,137 ns</td>
+<td class="processed hidden-xs">525,465</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopUrls">LoopUrls</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,164 ns</td>
+<td class="processed hidden-xs">433,918</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/Sync-1_5-SlowQueries">Sync-1_5-SlowQueries</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,153 ns</td>
+<td class="processed hidden-xs">9,486</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/Sync-1_5-HTTPStatus">Sync-1_5-HTTPStatus</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,141 ns</td>
+<td class="processed hidden-xs">129,755,698</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryStatsErrorsAggregator">TelemetryStatsErrorsAggregator</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,095 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/HekaProcessMessageFailures">HekaProcessMessageFailures</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,122 ns</td>
+<td class="processed hidden-xs">4,477</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopBasicMetrics">LoopBasicMetrics</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,472 ns</td>
+<td class="processed hidden-xs">10,051</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopCallMetrics">LoopCallMetrics</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,178 ns</td>
+<td class="processed hidden-xs">1,119</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryServerMetricsAggregator">TelemetryServerMetricsAggregator</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="3/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="50" style="width: 6%;">
+      <span class="sr-only">6% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,137 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryStatsBytesAggregator">TelemetryStatsBytesAggregator</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,149 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/DevManager">DevManager</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">0 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopActiveDailySubscribers">LoopActiveDailySubscribers</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,107 ns</td>
+<td class="processed hidden-xs">431,655</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopTotalUsers">LoopTotalUsers</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,131 ns</td>
+<td class="processed hidden-xs">7,485</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/Sync-1_5-ResponseTime">Sync-1_5-ResponseTime</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,124 ns</td>
+<td class="processed hidden-xs">129,755,701</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/Sync-1_5-FrequentUsersAggregator">Sync-1_5-FrequentUsersAggregator</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,153 ns</td>
+<td class="processed hidden-xs">27,985</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TokenServerHTTPStatus">TokenServerHTTPStatus</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,131 ns</td>
+<td class="processed hidden-xs">22,119,391</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/ApkSignerHTTPStatus">ApkSignerHTTPStatus</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,111 ns</td>
+<td class="processed hidden-xs">13,786</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopDailyCallStats">LoopDailyCallStats</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,113 ns</td>
+<td class="processed hidden-xs">5,086</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopUrls2">LoopUrls2</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,164 ns</td>
+<td class="processed hidden-xs">360,379</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopSessionizer">LoopSessionizer</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,174 ns</td>
+<td class="processed hidden-xs">7,353</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryManager">TelemetryManager</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">0 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/ApkMonolithCounters">ApkMonolithCounters</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,103 ns</td>
+<td class="processed hidden-xs">60,013</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopActiveDailyCallers">LoopActiveDailyCallers</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,690 ns</td>
+<td class="processed hidden-xs">7,485</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopActiveDailyCallersWithSessions">LoopActiveDailyCallersWithSessions</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,158 ns</td>
+<td class="processed hidden-xs">519</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/MsisdnGatewayHTTPStatus">MsisdnGatewayHTTPStatus</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,190 ns</td>
+<td class="processed hidden-xs">9,113</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryChannelMetricsAggregator">TelemetryChannelMetricsAggregator</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,119 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/ApkFactoryControllerHTTPStatus">ApkFactoryControllerHTTPStatus</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,113 ns</td>
+<td class="processed hidden-xs">53,318</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/ApkFactoryGeneratorHTTPStatus">ApkFactoryGeneratorHTTPStatus</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,112 ns</td>
+<td class="processed hidden-xs">29,212</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryServerMetricsHostAggregator">TelemetryServerMetricsHostAggregator</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,147 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryChannelMetrics60DaysAggregator">TelemetryChannelMetrics60DaysAggregator</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,140 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/ApkTopInstalls">ApkTopInstalls</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,161 ns</td>
+<td class="processed hidden-xs">13,879</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/LoopTotalUsersWithSessions">LoopTotalUsersWithSessions</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,170 ns</td>
+<td class="processed hidden-xs">519</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/Sync-1_5-ActiveDailyUsers">Sync-1_5-ActiveDailyUsers</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,127 ns</td>
+<td class="processed hidden-xs">129,755,705</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryConvertMetrics">TelemetryConvertMetrics</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,150 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-filter"></span> <a href="#plugins/filters/TelemetryStatsRecordsAggregator">TelemetryStatsRecordsAggregator</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,141 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr></tbody>
+</table>
+</div>
+
+<h3>Outputs</h3>
+<div id="outputs-index"><table class="table plugins outputs">
+  <thead>
+    <tr>
+      <th class="name">Name</th>
+      <th class="in-channel hidden-xs">In Channel</th>
+      <th class="match-channel hidden-xs">Match Channel</th>
+      <th class="avg-match-duration hidden-xs">Match Duration</th>
+      <th class="processed hidden-xs">Processed</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/DashboardOutput">DashboardOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,283 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/ElasticsearchFeederOutput">ElasticsearchFeederOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="44/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="50" style="width: 88%;">
+      <span class="sr-only">88% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="48/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="50" style="width: 96%;">
+      <span class="sr-only">96% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,063 ns</td>
+<td class="processed hidden-xs">439,520,986</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/MsisdnGatewayNginxErrorFileOutput">MsisdnGatewayNginxErrorFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,133 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/SimplePushAppLogsFileOutput">SimplePushAppLogsFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,140 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/Sync-1_5-NginxFileOutput">Sync-1_5-NginxFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="3/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="50" style="width: 6%;">
+      <span class="sr-only">6% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,100 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/Sync-1_5-Alert">Sync-1_5-Alert</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,170 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/Sync-1_5-SlowQueryFileOutput">Sync-1_5-SlowQueryFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,060 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/TokenServerFileOutput">TokenServerFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,074 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/TokenServerNginxFileOutput">TokenServerNginxFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,187 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/ApkLogOutput">ApkLogOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">2,140 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/LoopServerFileOutput">LoopServerFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,080 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/LoopNginxFileOutput">LoopNginxFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,176 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/MsisdnGatewayNginxFileOutput">MsisdnGatewayNginxFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,039 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/Sync-1_5-FileOutput">Sync-1_5-FileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,148 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/TelemetryAlert">TelemetryAlert</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,184 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/TokenServerAlert">TokenServerAlert</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,194 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/FindMyDeviceLogOutput">FindMyDeviceLogOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,091 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/LoopNginxErrorFileOutput">LoopNginxErrorFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,186 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/LoopSimplePushAppLogsFileOutput">LoopSimplePushAppLogsFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="2/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="50" style="width: 4%;">
+      <span class="sr-only">4% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,055 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/Sync-1_5-NginxErrorFileOutput">Sync-1_5-NginxErrorFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,180 ns</td>
+<td class="processed hidden-xs"></td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-log-out"></span> <a href="#plugins/outputs/TokenServerLocalVerifierFileOutput">TokenServerLocalVerifierFileOutput</a></td>
+<td class="in-channel hidden-xs">
+  <div class="progress" title="0/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50" style="width: 0%;">
+      <span class="sr-only">0% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="match-channel hidden-xs">
+  <div class="progress" title="1/50">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="50" style="width: 2%;">
+      <span class="sr-only">2% Complete</span>
+    </div>
+  </div>
+</td>
+<td class="avg-match-duration hidden-xs">1,082 ns</td>
+<td class="processed hidden-xs"></td>
+</tr></tbody>
+</table>
+</div>
+
+<h3>Encoders</h3>
+<div id="encoders-index"><table class="table plugins encoders">
+  <thead>
+    <tr>
+      <th class="name">Name</th>
+      <th class="process-failures">Process Failures</th>
+      <th class="avg-process-duration">Process Duration</th>
+      <th class="processed">Processed</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/LoopNginxErrorFileOutput-ProtobufEncoder">LoopNginxErrorFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">2,022 ns</td>
+<td class="processed hidden-xs">586</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/Sync-1_5-Alert-AlertEncoder">Sync-1_5-Alert-AlertEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">0 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/Sync-1_5-SlowQueryFileOutput-ProtobufEncoder">Sync-1_5-SlowQueryFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">3,743 ns</td>
+<td class="processed hidden-xs">9,486</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/LoopSimplePushAppLogsFileOutput-ProtobufEncoder">LoopSimplePushAppLogsFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">1,730 ns</td>
+<td class="processed hidden-xs">7</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/Sync-1_5-FileOutput-ProtobufEncoder">Sync-1_5-FileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,242 ns</td>
+<td class="processed hidden-xs">129,746,311</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/Sync-1_5-NginxErrorFileOutput-ProtobufEncoder">Sync-1_5-NginxErrorFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">3,413 ns</td>
+<td class="processed hidden-xs">8,706</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/ElasticsearchFeederOutput-PiiScrubber">ElasticsearchFeederOutput-PiiScrubber</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">32,102 ns</td>
+<td class="processed hidden-xs">439,520,947</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/ApkLogOutput-ProtobufEncoder">ApkLogOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">2,941 ns</td>
+<td class="processed hidden-xs">472,194</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/LoopServerFileOutput-ProtobufEncoder">LoopServerFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">3,883 ns</td>
+<td class="processed hidden-xs">431,655</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/MsisdnGatewayNginxErrorFileOutput-ProtobufEncoder">MsisdnGatewayNginxErrorFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">0 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/SimplePushAppLogsFileOutput-ProtobufEncoder">SimplePushAppLogsFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">3,500 ns</td>
+<td class="processed hidden-xs">101,925</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/TokenServerNginxFileOutput-ProtobufEncoder">TokenServerNginxFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,896 ns</td>
+<td class="processed hidden-xs">22,119,391</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/TokenServerAlert-AlertEncoder">TokenServerAlert-AlertEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">0 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/FindMyDeviceLogOutput-ProtobufEncoder">FindMyDeviceLogOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">3,096 ns</td>
+<td class="processed hidden-xs">2</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/LoopNginxFileOutput-ProtobufEncoder">LoopNginxFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">4,900 ns</td>
+<td class="processed hidden-xs">539,163</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/MsisdnGatewayNginxFileOutput-ProtobufEncoder">MsisdnGatewayNginxFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">4,824 ns</td>
+<td class="processed hidden-xs">9,113</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/TelemetryAlert-AlertEncoder">TelemetryAlert-AlertEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">0 ns</td>
+<td class="processed hidden-xs">0</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/Sync-1_5-NginxFileOutput-ProtobufEncoder">Sync-1_5-NginxFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">4,386 ns</td>
+<td class="processed hidden-xs">129,755,698</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/TokenServerFileOutput-ProtobufEncoder">TokenServerFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">5,232 ns</td>
+<td class="processed hidden-xs">22,125,215</td>
+</tr><tr><td class="name"><span class="glyphicon glyphicon-export"></span> <a href="#plugins/encoders/TokenServerLocalVerifierFileOutput-ProtobufEncoder">TokenServerLocalVerifierFileOutput-ProtobufEncoder</a></td>
+<td class="process-failures hidden-xs">0</td>
+<td class="process-duration">2,954 ns</td>
+<td class="processed hidden-xs">132,963,071</td>
+</tr></tbody>
+</table>
+</div>
+</div></div>
+    </div>
+
+    <script data-main="javascript/main" src="Heka_Dashboard_files/require.js"></script>
+
+
+</body></html>
