@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 a:focus {
@@ -50,6 +50,14 @@ h2 .glyphicon {
 
 .well {
   background-color: #fafafa;
+}
+
+.plugin-column {
+  text-align: center;
+}
+
+.plugin-link {
+  text-align: left;
 }
 
 .stat-widget {
